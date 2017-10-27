@@ -12,23 +12,29 @@
     <div id="voting_area">
         <div id="candidates">
             <ul id="candi_list">
-                <li><button class="candidate" id="c1">Candidate 1</button></li>
-                <li><button class="candidate" id="c2">Candidate 2</button></li>
-                <li><button class="candidate" id="c3">Candidate 3</button></li>
-                <li><button class="candidate" id="c4">Candidate 4</button></li>
+                <li><input type="radio" name="candidate" class="candidate" id="c1">Candidate 1</button></li>
+                <li><input type="radio" name="candidate" class="candidate" id="c2">Candidate 2</button></li>
+                <li><input type="radio" name="candidate" class="candidate" id="c3">Candidate 3</button></li>
+                <li><input type="radio" name="candidate" class="candidate" id="c4">Candidate 4</button></li>
             </ul>
         </div>
+        <button id="cast">Vote</button>
         <div id="notif">
 
         </div>
         <script>
-            var candidateButtons = document.getElementById("candi_list").childNodes;
-            
-            function setNotif(candidateNum) {
+            var candidateRadios = document.getElementById("candi_list").childNodes;
+
+            document.getElementById("cast").onclick = function(e) {
+                var candidateNum;
+                for(i = 0; i < candidateRadios.length; i++) {
+                    if(candidateRadios[i].checked == true) {
+                        candidateNum = i+1;
+                        break;
+                    }
+                }
                 document.getElementById("notif").innerHTML = "Pressed candidate button " + candidateNum;
             }
-            
-
         </script>
     </div>
 </body>
