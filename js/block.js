@@ -1,6 +1,10 @@
-function block(previousHash, transaction) {
+function block(previousHash, data) {
     this.previousHash = previousHash;
-    this.transaction = transaction;
+    this.data = data;
+
+    var array = [data.hashCode().toString(), previousHash];
+    this.blockHash = array.toString().hashCode();
+
 }
 
 String.prototype.hashCode = function() {
