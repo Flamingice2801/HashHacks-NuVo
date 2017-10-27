@@ -1,0 +1,2 @@
+1)Added the frontend framework.
+2)Debugged the frontend.
