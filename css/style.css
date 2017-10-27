@@ -49,10 +49,10 @@ input[type="radio"] {
 }
 button {
     font-family: 'Open Sans', sans-serif, Helvetica, Arial, sans-serif;
-    border-radius: 2.8em;
+    border-radius: 2.7em;
     max-width: 280px;
     width: 7em;
-    height: 2.8em;
+    height: 2.7em;
     margin: auto;
     padding: auto 1.5em;
     background-color: #f98009;
