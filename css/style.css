@@ -27,6 +27,7 @@ p {
 .candidate {
     margin: 0.2em 0.2em;
     padding: 0.4em 0.2em;
+    border: 1px #000;
 }
 
 #tagline {
@@ -56,4 +57,17 @@ button {
     padding: auto 1.5em;
     background-color: #f98009;
     border: 1px solid #363636;
+    transition: all 0.2s ease;
+}
+button:active {
+    background-color: #f98009;
+    box-shadow: inset 0 0 7px 0px #363636;
+}
+button:hover {
+    border: 1px solid #f98009;
+    background-color: #f98009;
+}
+button:disabled {
+    background-color: #636363;
+    color: #262626;
 }

@@ -25,15 +25,22 @@
             var candidateRadios = document.getElementsByClassName("candidate");
 
             document.getElementById("cast").onclick = function(e) {
-                var candidateNum;
+                var candidateNum = 0;
                 for(i = 0; i < candidateRadios.length; i++) {
                     if(candidateRadios[i].checked) {
                         candidateNum = i+1;
                         document.getElementById("cast").disabled = true;
+                        alert("Your vote is recorded!");
                         break;
                     }
                 }
-                document.getElementById("notif").innerHTML = "Voted for candidate #" + candidateNum;
+                if(candidateNum == 0) {
+                    document.getElementById("notif").innerHTML = "Vote not recorded";
+                    alert("Select a candidate from the list");
+                } else {
+                    document.getElementById("notif").innerHTML = "Voted for candidate #" + candidateNum;
+                }
+                
             }
         </script>
     </div>
