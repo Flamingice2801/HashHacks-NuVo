@@ -1,3 +1,3 @@
 # HashHacks-NuVo
 ## VoteChain 
-Applying blockchains for voting purposes.
+Blockchain technology provides all of the characteristics we would want in a platform that is arguably the most important part of a democratic society; it’s fault-tolerant, we cannot change the past, we cannot hack the present, we cannot alter the access to the system, every node with access can see the exact same results, and every vote can be irrefutably traced to its source without sacrificing a voter's vote anonymity. End to end verifiable voting systems will give the voter the ability to verify if their vote is correctly recorded and correctly counted, for instance, if a ballot is missing, in transit or modified, it can even be detected by the voter and caught before the election is over.
