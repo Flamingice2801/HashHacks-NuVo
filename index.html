@@ -12,10 +12,10 @@
     <div id="voting_area">
         <div id="candidates">
             <ul id="candi_list">
-                <li><input type="radio" name="candidate" class="candidate" id="c1">Candidate 1</button></li>
-                <li><input type="radio" name="candidate" class="candidate" id="c2">Candidate 2</button></li>
-                <li><input type="radio" name="candidate" class="candidate" id="c3">Candidate 3</button></li>
-                <li><input type="radio" name="candidate" class="candidate" id="c4">Candidate 4</button></li>
+                <input type="radio" name="candidate" class="candidate" id="c1">Candidate 1</button><br>
+                <input type="radio" name="candidate" class="candidate" id="c2">Candidate 2</button><br>
+                <input type="radio" name="candidate" class="candidate" id="c3">Candidate 3</button><br>
+                <input type="radio" name="candidate" class="candidate" id="c4">Candidate 4</button><br>
             </ul>
         </div>
         <button id="cast">Vote</button>
@@ -23,7 +23,7 @@
 
         </div>
         <script>
-            var candidateRadios = document.getElementsByClassName("candidate"); 
+            var candidateRadios = document.getElementsByClassName("candidate");
 
             document.getElementById("cast").onclick = function(e) {
                 var candidateNum;
