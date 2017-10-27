@@ -23,13 +23,14 @@
 
         </div>
         <script>
-            var candidateRadios = document.getElementById("candi_list").childNodes;
+            var candidateRadios = document.getElementsByClassName("candidate"); 
 
             document.getElementById("cast").onclick = function(e) {
                 var candidateNum;
                 for(i = 0; i < candidateRadios.length; i++) {
-                    if(candidateRadios[i].checked == true) {
+                    if(candidateRadios[i].checked) {
                         candidateNum = i+1;
+                        alert("Got it!");
                         break;
                     }
                 }
