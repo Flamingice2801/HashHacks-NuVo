@@ -30,6 +30,7 @@
                 for(i = 0; i < candidateRadios.length; i++) {
                     if(candidateRadios[i].checked) {
                         candidateNum = i+1;
+                        document.getElementById("cast").disabled = true;
                         break;
                     }
                 }
