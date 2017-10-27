@@ -1,3 +1,3 @@
 # HashHacks-NuVo
-VoteChain :
+## VoteChain :
 Applying blockchains for voting purposes
