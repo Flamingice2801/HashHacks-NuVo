@@ -11,13 +11,25 @@
     <p id="tagline">Chaining your votes</p>
     <div id="voting_area">
         <div id="candidates">
-            <ul>
-                <li>Candidate 1</li>
-                <li>Candidate 2</li>
-                <li>Candidate 3</li>
-                <li>Candidate 4</li>
+            <ul id="candi_list">
+                <li><button class="candidate" id="c1">Candidate 1</button></li>
+                <li><button class="candidate" id="c2">Candidate 2</button></li>
+                <li><button class="candidate" id="c3">Candidate 3</button></li>
+                <li><button class="candidate" id="c4">Candidate 4</button></li>
             </ul>
         </div>
+        <div id="notif">
+
+        </div>
+        <script>
+            var candidateButtons = document.getElementById("candi_list").childNodes;
+            
+            function setNotif(candidateNum) {
+                document.getElementById("notif").innerHTML = "Pressed candidate button " + candidateNum;
+            }
+            
+
+        </script>
     </div>
 </body>
 </html>
