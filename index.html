@@ -30,11 +30,10 @@
                 for(i = 0; i < candidateRadios.length; i++) {
                     if(candidateRadios[i].checked) {
                         candidateNum = i+1;
-                        alert("Got it!");
                         break;
                     }
                 }
-                document.getElementById("notif").innerHTML = "Pressed candidate button " + candidateNum;
+                document.getElementById("notif").innerHTML = "Voted for candidate #" + candidateNum;
             }
         </script>
     </div>
