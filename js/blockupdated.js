@@ -41,34 +41,42 @@ require(["crypto-js/aes", "crypto-js/sha256"], function (AES, SHA256) {
             alert(hashed);
             return hashed;
         }
+        viewBlockData() {
+            console.log(JSON.stringify(this, null, 4));
+        }
         constructor(index, timestamp, data, previousHash = '') {
             this.index = index;
             this.timestamp = timestamp;
             this.data = data;
             this.previousHash = previousHash;
             this.hash = this.calculateHash();
-        }        
+        }
+
     }
 
     class Blockchain {
         constructor() {
             this.chain = [];
-            this.createGenesisBlock();
+            this.createGenesisBlock().viewBlockData();
         }
 
         createGenesisBlock() {
-            return new Block(0, "1509144683073", "gen", "0");
+            let g = new Block(0, "1509144683073", "gen", "0");
+            this.chain.push(g);
+            return g;
+
         }
 
         getLatestBlock() {
             return this.chain[this.chain.length-1];
         }
 
-        /*addBlock(newBlock) {
+        addBlock(newBlock) {
             newBlock.previousHash = this.getLatestBlock.hash;
             newBlock.hash = newBlock.calculateHash();
             this.chain.push(this.newBlock);
-        }*/
+            newBlock.viewBlockData();
+        }
     }
 
     let b = new Blockchain();
