@@ -34,11 +34,22 @@ require.config({
     ]
 });
 
-require(["crypto-js/aes", "crypto-js/sha256"], function (AES, SHA256) {
+//require(["crypto-js/aes", "crypto-js/sha256"], function (AES, SHA256) {
+    String.prototype.hashCode = function() {
+      var hash = 0, i, chr;
+      if (this.length === 0) return hash;
+      for (i = 0; i < this.length; i++) {
+        chr   = this.charCodeAt(i);
+        hash  = ((hash << 5) - hash) + chr;
+        hash |= 0; // Convert to 32bit integer
+      }
+      return hash;
+    };
+
     class Block {
         calculateHash() {
-            var hashed = (SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString() + "");
-            //alert(hashed);
+            var hashed = ((this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString().hashCode() + "");
+            alert(hashed);
             return hashed;
         }
         viewBlockData() {
@@ -87,10 +98,10 @@ require(["crypto-js/aes", "crypto-js/sha256"], function (AES, SHA256) {
     }
 
     let b = new Blockchain();
-    b.addBlock(new Block(1, Date.now().toString(), {candidate: 1}, b.getLatestHash()));    
+    b.addBlock(new Block(1, Date.now().toString(), {candidate: 1}, b.getLatestHash()));
     b.addBlock(new Block(2, Date.now().toString(), {candidate: 3}, b.getLatestHash()));
     b.addBlock(new Block(3, Date.now().toString(), {candidate: 2}, b.getLatestHash()));
     //alert("Chain length: " + chain.length);
 
     //console.log(JSON.stringify(b, null, 4));
-});
+//});
