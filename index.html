@@ -32,6 +32,7 @@
                         if(candidateRadios[i].checked) {
                             candidateNum = i+1;
                             document.getElementById("cast").disabled = true;
+                            document.getElementByClassName("candidate").disabled = true;
                             alert("Your vote is recorded!");
                             break;
                         }
