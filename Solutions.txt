@@ -1,0 +1,10 @@
+Solutions
+1)This has been solved by using the blockchain approach for voting as the system will become completely digitized and more secured.
+2)Prioritization can be done on the basis of:
+	a)Age
+	b)Pin code
+	c)Name
+
+3)TBD later :)	
+
+
