@@ -62,8 +62,9 @@ require(["crypto-js/aes", "crypto-js/sha256"], function (AES, SHA256) {
 
         createGenesisBlock() {
             let g = new Block(0, "1509144683073", "gen", "0");
-            this.chain += [g];
-            alert("Chain: " + this.chain[0].viewBlockData());
+            //g.viewBlockData
+            this.chain.push(g);
+            alert("Chain: " + (this.chain[0]).viewBlockData());
             return g;
 
         }
