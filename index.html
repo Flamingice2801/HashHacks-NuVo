@@ -13,14 +13,15 @@
         <p id="tagline">Chaining your votes</p>
         <div id="voting_area">
             <div id="userverif">
-                Enter your UID: <input type="text" name="uid"/><br/><br/>
+                Enter your UID: <input type="text" name="uid" id="uid"/><br/><br/>
                 <button id="uidButton" type="submit">Enable</button>
                 <script>
                     document.getElementById("uidButton").onclick = function(e) {
-                        if(document.getElementById("uid").textContent.length == 4) {
-                            alert("Correct length!");
+                        if(checkUID(document.getElementById("uid").value)) {
+                            alert("Eligible for voting!");
+                            document.getElementById("cast").disabled = false;
                         } else {
-                            alert("xsdc");
+                            alert("Not eligible for voting!");
                         }
                     }
                 </script>
@@ -34,7 +35,7 @@
                     <input type="radio" name="candidate" class="candidate" id="c4">Candidate 4 <br>
                 </ul>
             </div>
-            <button id="cast">Vote</button>
+            <button id="cast" disabled="disabled" >Vote</button>
             <div id="notif"></div>
             <script>
                 var candidateRadios = document.getElementsByClassName("candidate");
@@ -43,7 +44,7 @@
                     for(i = 0; i < candidateRadios.length; i++) {
                         if(candidateRadios[i].checked) {
                             candidateNum = i+1;
-                            //document.getElementById("cast").disabled = true;
+                            document.getElementById("cast").disabled = true;
                             createBlockChain(i+1);
                             alert("Your vote is recorded!");
                             break;

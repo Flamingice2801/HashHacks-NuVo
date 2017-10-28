@@ -107,7 +107,25 @@ class Blockchain {
     //console.log(JSON.stringify(b, null, 4));
 //});
 var candidateVotes = [0,0,0,0];
-
+var uidArrays = [];
+function checkUID(num) {
+    var f = 0;
+    if(num.length == 4) {
+        for(i = 0; i < uidArrays.length; i++) {
+            if(num == uidArrays[i]) {
+                f = 1;
+                return false;
+            }
+        }
+        if(f == 0) {
+            uidArrays.push(num);
+            return true;
+        }
+    } else {
+        return false;
+    }
+    
+}
 function createBlockChain(n) {
     if(candidateVotes[n-1] == NaN) {
         candidateVotes[n-1] = 1;
