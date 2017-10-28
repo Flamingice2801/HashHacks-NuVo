@@ -8,42 +8,46 @@
 </head>
 <body>
     <script type="text/javascript" src="js/blockupdated.js"></script>
-    <h1>VoteChain</h1>
-    <p id="tagline">Chaining your votes</p>
-    <div id="voting_area">
-        <div id="candidates">
-            Choose a candidate:<br/>
-            <ul id="candi_list">
-                <input type="radio" name="candidate" class="candidate" id="c1">Candidate 1</button><br>
-                <input type="radio" name="candidate" class="candidate" id="c2">Candidate 2</button><br>
-                <input type="radio" name="candidate" class="candidate" id="c3">Candidate 3</button><br>
-                <input type="radio" name="candidate" class="candidate" id="c4">Candidate 4</button><br>
-            </ul>
-        </div>
-        <button id="cast">Vote</button>
-        <div id="notif"></div>
-        <script>
-            var candidateRadios = document.getElementsByClassName("candidate");
+    <div id="text-center">
+        <h1>VoteChain</h1>
+        <p id="tagline">Chaining your votes</p>
+        <div id="voting_area">
+            <div id="candidates">
+                Choose a candidate:<br/>
+                <ul class="list">
+                    <li class="list__item">
+                        <input type="radio" name="candidate" class="candidate" class="radio-btn" name="choice" id="c1"><label for="c1-opt" class="label">Candidate 1</label></button><br>
+                        <input type="radio" name="candidate" class="candidate" class="radio-btn" name="choice" id="c2"><label for="c2-opt" class="label">Candidate 2</label></button><br>
+                        <input type="radio" name="candidate" class="candidate" class="radio-btn" name="choice" id="c3"><label for="c3-opt" class="label">Candidate 3</label></button><br>
+                        <input type="radio" name="candidate" class="candidate" class="radio-btn" name="choice" id="c4"><label for="c4-opt" class="label">Candidate 4</label></button><br>
+                    </li>
+                </ul>
+            </div>
+            <button id="cast">Vote</button>
+            <div id="notif"></div>
+            <script>
+                var candidateRadios = document.getElementsByClassName("candidate");
 
-            document.getElementById("cast").onclick = function(e) {
-                var candidateNum = 0;
-                for(i = 0; i < candidateRadios.length; i++) {
-                    if(candidateRadios[i].checked) {
-                        candidateNum = i+1;
-                        document.getElementById("cast").disabled = true;
-                        alert("Your vote is recorded!");
-                        break;
+                document.getElementById("cast").onclick = function(e) {
+                    var candidateNum = 0;
+                    for(i = 0; i < candidateRadios.length; i++) {
+                        if(candidateRadios[i].checked) {
+                            candidateNum = i+1;
+                            document.getElementById("cast").disabled = true;
+                            alert("Your vote is recorded!");
+                            break;
+                        }
                     }
-                }
-                if(candidateNum == 0) {
-                    document.getElementById("notif").innerHTML = "Vote not recorded";
-                    alert("Select a candidate from the list");
-                } else {
-                    document.getElementById("notif").innerHTML = "Voted for candidate #" + candidateNum;
-                }
+                    if(candidateNum == 0) {
+                        document.getElementById("notif").innerHTML = "Vote not recorded";
+                        alert("Select a candidate from the list");
+                    } else {
+                        document.getElementById("notif").innerHTML = "Voted for candidate #" + candidateNum;
+                    }
 
-            }
-        </script>
+                }
+            </script>
+        </div>
     </div>
 </body>
 </html>

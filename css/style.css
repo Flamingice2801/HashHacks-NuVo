@@ -1,3 +1,75 @@
+/* Radio Button CSS starts */
+$primary-color: #fff;
+$accent-color: #009688;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background: linear-gradient(to right bottom, #1b1b1e, #333);
+}
+
+.candidates {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.list {
+    flex: 0 20rem;
+}
+
+.list__item {
+    position: relative;
+    &:hover .label {
+        color: $accent-color;
+        &::before {
+            border: 0.5rem solid $accent-color;
+            margin-right: 2rem;
+        }
+    }
+}
+
+.radio-btn {
+    display: none;
+    &:checked + .label {
+        color: $accent-color;
+        &::before {
+            margin-right: 2rem;
+            border: 0.5rem solid $accent-color;
+            background: $primary-color;
+        }
+    }
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    color: $primary-color;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s linear;
+}
+
+.label::before {
+    display: block;
+    height: 1.125rem;
+    width: 1.125rem;
+    margin-right: 0.625rem;
+    content: "";
+    border: 0.5rem solid $primary-color;
+    border-radius: 50%;
+    transition: all 0.25s linear;
+}
+
+/* Radio Button CSS ends */
 body {
     margin: 0;
     padding: 0;
@@ -27,7 +99,7 @@ p {
 .candidate {
     margin: 0.2em 0.2em;
     padding: 0.4em 0.2em;
-    border: 1px #000;
+    /*border: 1px #000;*/
 }
 
 #tagline {
@@ -36,11 +108,10 @@ p {
 }
 
 input[type="radio"] {
-    padding: 2em;
     font-size: 15px;
 }
 
-.text-center {
+#text-center {
     text-align: center;
 }
 
