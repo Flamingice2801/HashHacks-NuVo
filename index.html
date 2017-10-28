@@ -38,6 +38,7 @@
             </div>
             <button id="cast" disabled="disabled" >Vote</button>
             <div id="notif"></div>
+            <div id="vote_ticker"></div>
             <script>
                 var candidateRadios = document.getElementsByClassName("candidate");
                 document.getElementById("cast").onclick = function(e) {
@@ -60,6 +61,7 @@
                     } else {
                         document.getElementById("notif").innerHTML = "Voted for candidate #" + candidateNum;
                     }
+                    document.getElementById("vote_ticker").innerHTML = updateVotes() + " votes so far";
                 }
             </script>
         </div>

@@ -126,6 +126,13 @@ function checkUID(num) {
     }
     
 }
+function updateVotes() {
+    var sum = 0;
+    for(i = 0; i < candidateVotes.length; i++) {
+        sum+=candidateVotes[i];
+    }
+    return sum;
+}
 function createBlockChain(n) {
     if(candidateVotes[n-1] == NaN) {
         candidateVotes[n-1] = 1;
