@@ -26,6 +26,7 @@
                     }
                 </script>
             </div>
+            <br/><br/>
             <div id="candidates">
                 Choose a candidate:<br/>
                 <ul id="candi_list">
@@ -46,9 +47,12 @@
                             candidateNum = i+1;
                             document.getElementById("cast").disabled = true;
                             createBlockChain(i+1);
-                            alert("Your vote is recorded!");
+                            alert("Your vote is recorded!");                            
                             break;
                         }
+                    }
+                    for (i = 0; i < candidateRadios.length; i++) {
+                        candidateRadios[i].checked = false;
                     }
                     if(candidateNum == 0) {
                         document.getElementById("notif").innerHTML = "Vote not recorded";
@@ -56,7 +60,6 @@
                     } else {
                         document.getElementById("notif").innerHTML = "Voted for candidate #" + candidateNum;
                     }
-
                 }
             </script>
         </div>

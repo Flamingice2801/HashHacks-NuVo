@@ -49,7 +49,7 @@ class Blockchain {
     class Block {
         calculateHash() {
             var hashed = ((this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString().hashCode() + "");
-            alert(hashed);
+            //alert(hashed);
             return hashed;
         }
         viewBlockData() {
