@@ -63,13 +63,13 @@ require(["crypto-js/aes", "crypto-js/sha256"], function (AES, SHA256) {
             let g = new Block(0, "1509144683073", "gen", "0");
             //g.viewBlockData
             chain.push(g);
-            alert("Chain: " + (chain[0]).viewBlockData());
+            //alert("Chain: " + (chain[0]).viewBlockData());
             return g;
 
         }
 
         getLatestBlock() {
-            alert("the latest block " + chain[chain.length-1]);
+            //alert("the latest block " + chain[chain.length-1]);
             return chain[chain.length-1];
         }
 
@@ -87,11 +87,10 @@ require(["crypto-js/aes", "crypto-js/sha256"], function (AES, SHA256) {
     }
 
     let b = new Blockchain();
-    b.addBlock(new Block(1, Date.now().toString(), {candidate: 1}, b.getLatestHash()));
-    
+    b.addBlock(new Block(1, Date.now().toString(), {candidate: 1}, b.getLatestHash()));    
     b.addBlock(new Block(2, Date.now().toString(), {candidate: 3}, b.getLatestHash()));
     b.addBlock(new Block(3, Date.now().toString(), {candidate: 2}, b.getLatestHash()));
-    alert("Chain length: " + chain.length);
+    //alert("Chain length: " + chain.length);
 
-    console.log(JSON.stringify(b, null, 4));
+    //console.log(JSON.stringify(b, null, 4));
 });
