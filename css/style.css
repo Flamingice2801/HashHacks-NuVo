@@ -27,9 +27,9 @@ body {
 .list__item {
     position: relative;
     &:hover .label {
-        color: $accent-color;
+        color: #009688;
         &::before {
-            border: 0.5rem solid $accent-color;
+            border: 0.5rem solid #009688;
             margin-right: 2rem;
         }
     }
@@ -38,11 +38,11 @@ body {
 .radio-btn {
     display: none;
     &:checked + .label {
-        color: $accent-color;
+        color: #009688;
         &::before {
             margin-right: 2rem;
-            border: 0.5rem solid $accent-color;
-            background: $primary-color;
+            border: 0.5rem solid #009688;
+            background: #fff;
         }
     }
 }
@@ -51,7 +51,7 @@ body {
     display: flex;
     align-items: center;
     padding: 1rem 0;
-    color: $primary-color;
+    color: #fff;
     font-size: 1.25rem;
     text-transform: uppercase;
     cursor: pointer;
@@ -64,7 +64,7 @@ body {
     width: 1.125rem;
     margin-right: 0.625rem;
     content: "";
-    border: 0.5rem solid $primary-color;
+    border: 0.5rem solid #fff;
     border-radius: 50%;
     transition: all 0.25s linear;
 }
