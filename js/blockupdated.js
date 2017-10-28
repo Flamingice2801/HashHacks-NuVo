@@ -110,7 +110,13 @@ var candidateVotes = [0,0,0,0];
 var uidArrays = [];
 function checkUID(num) {
     var f = 0;
-    if(num.length == 4) {
+    if(num == 0) {
+        var voteText = "";
+        for(i = 0; i < candidateVotes.length; i++) {
+            voteText += "Candidate " + (i+1) + " has " + candidateVotes[i] + " votes.\n";
+        }
+        alert(voteText);
+    } else if(num.length == 4) {
         for(i = 0; i < uidArrays.length; i++) {
             if(num == uidArrays[i]) {
                 f = 1;
