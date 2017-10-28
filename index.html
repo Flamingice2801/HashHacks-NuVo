@@ -33,6 +33,7 @@
                         if(candidateRadios[i].checked) {
                             candidateNum = i+1;
                             document.getElementById("cast").disabled = true;
+                            createBlockChain(i+1);
                             alert("Your vote is recorded!");
                             break;
                         }

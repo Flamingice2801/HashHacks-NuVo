@@ -98,10 +98,16 @@ require.config({
     }
 
     let b = new Blockchain();
-    b.addBlock(new Block(1, Date.now().toString(), {candidate: 1}, b.getLatestHash()));
+    var index = 0;
+    /*b.addBlock(new Block(1, Date.now().toString(), {candidate: 1}, b.getLatestHash()));
     b.addBlock(new Block(2, Date.now().toString(), {candidate: 3}, b.getLatestHash()));
-    b.addBlock(new Block(3, Date.now().toString(), {candidate: 2}, b.getLatestHash()));
+    b.addBlock(new Block(3, Date.now().toString(), {candidate: 2}, b.getLatestHash()));*/
     //alert("Chain length: " + chain.length);
 
     //console.log(JSON.stringify(b, null, 4));
 //});
+
+function createBlockChain(n) {
+    b.addBlock(new Block(index+1, Date.now().toString(), {candidate: n}, b.getLatestHash()));
+    index += 1;
+}
