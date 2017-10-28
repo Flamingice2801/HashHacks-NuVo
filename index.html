@@ -12,27 +12,38 @@
         <h1>VoteChain</h1>
         <p id="tagline">Chaining your votes</p>
         <div id="voting_area">
+            <div id="userverif">
+                Enter your UID: <input type="text" name="uid"/><br/><br/>
+                <button id="uidButton" type="submit">Enable</button>
+                <script>
+                    document.getElementById("uidButton").onclick = function(e) {
+                        if(document.getElementById("uid").textContent.length == 4) {
+                            alert("Correct length!");
+                        } else {
+                            alert("xsdc");
+                        }
+                    }
+                </script>
+            </div>
             <div id="candidates">
                 Choose a candidate:<br/>
                 <ul id="candi_list">
-                    <input type="radio" name="candidate" class="candidate" id="c1">Candidate 1</button><br>
-                    <input type="radio" name="candidate" class="candidate" id="c2">Candidate 2</button><br>
-                    <input type="radio" name="candidate" class="candidate" id="c3">Candidate 3</button><br>
-                    <input type="radio" name="candidate" class="candidate" id="c4">Candidate 4</button><br>
+                    <input type="radio" name="candidate" class="candidate" id="c1">Candidate 1 <br>
+                    <input type="radio" name="candidate" class="candidate" id="c2">Candidate 2 <br>
+                    <input type="radio" name="candidate" class="candidate" id="c3">Candidate 3 <br>
+                    <input type="radio" name="candidate" class="candidate" id="c4">Candidate 4 <br>
                 </ul>
             </div>
             <button id="cast">Vote</button>
             <div id="notif"></div>
             <script>
                 var candidateRadios = document.getElementsByClassName("candidate");
-
-
                 document.getElementById("cast").onclick = function(e) {
                     var candidateNum = 0;
                     for(i = 0; i < candidateRadios.length; i++) {
                         if(candidateRadios[i].checked) {
                             candidateNum = i+1;
-                            document.getElementById("cast").disabled = true;
+                            //document.getElementById("cast").disabled = true;
                             createBlockChain(i+1);
                             alert("Your vote is recorded!");
                             break;

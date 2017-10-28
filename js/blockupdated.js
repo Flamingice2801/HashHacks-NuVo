@@ -24,7 +24,7 @@ class Blockchain {
 }*/
 
 
-require.config({
+/*require.config({
     packages: [
         {
             name: 'crypto-js',
@@ -32,7 +32,7 @@ require.config({
             main: 'index'
         }
     ]
-});
+});*/
 
 //require(["crypto-js/aes", "crypto-js/sha256"], function (AES, SHA256) {
     String.prototype.hashCode = function() {
@@ -106,8 +106,17 @@ require.config({
 
     //console.log(JSON.stringify(b, null, 4));
 //});
+var candidateVotes = [0,0,0,0];
 
 function createBlockChain(n) {
+    if(candidateVotes[n-1] == NaN) {
+        candidateVotes[n-1] = 1;
+    }else {
+        candidateVotes[n-1]++;
+    }
+    for(i = 0; i < candidateVotes.length; i++) {
+        console.log(i+1 + ": " + candidateVotes[i] + "\n");
+    }
     b.addBlock(new Block(index+1, Date.now().toString(), {candidate: n}, b.getLatestHash()));
     index += 1;
 }
