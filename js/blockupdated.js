@@ -53,37 +53,36 @@ require(["crypto-js/aes", "crypto-js/sha256"], function (AES, SHA256) {
         }
 
     }
-
+    const chain = [];
     class Blockchain {
         constructor() {
-            this.chain = [];
             this.createGenesisBlock().viewBlockData();
         }
 
         createGenesisBlock() {
             let g = new Block(0, "1509144683073", "gen", "0");
             //g.viewBlockData
-            this.chain.push(g);
-            alert("Chain: " + (this.chain[0]).viewBlockData());
+            chain.push(g);
+            alert("Chain: " + (chain[0]).viewBlockData());
             return g;
 
         }
 
         getLatestBlock() {
-            alert("the latest block " + this.chain[this.chain.length-1]);
-            return this.chain[this.chain.length-1];
+            alert("the latest block " + chain[chain.length-1]);
+            return chain[chain.length-1];
         }
 
         addBlock(newBlock) {
             newBlock.previousHash = this.getLatestBlock.hash;
             newBlock.hash = newBlock.calculateHash();
-            this.chain.push(this.newBlock);
+            chain.push(this.newBlock);
             newBlock.viewBlockData();
         }
 
         getLatestHash() {
-            this.getLatestBlock().viewBlockData();
-            //this.getLatestBlock().hash;
+            //this.getLatestBlock().viewBlockData();
+            this.getLatestBlock().hash;
         }
     }
 
