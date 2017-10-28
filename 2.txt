@@ -1,0 +1,3 @@
+Added our own simple blockchain functionality
+Blocks are now working as expected and carrying the data
+The complete blockchain functionality is not yet complete though
